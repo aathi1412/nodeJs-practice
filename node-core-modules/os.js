@@ -1,4 +1,4 @@
-const os = require('os')
+const os = require('node-core-modules/os')
 
 console.log("Platform", os.platform());
 console.log("arch", os.arch());
