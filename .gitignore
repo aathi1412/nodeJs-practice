@@ -1,4 +1,2 @@
 .idea
-sample.js
-index.html
-express/node_modules/*
+mongodb-practice/node_modules/*
