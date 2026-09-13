@@ -1,7 +1,8 @@
 const { MongoClient } = require('mongodb');
+require('dotenv').config();
 
 let db;
-const uri = "mongodb+srv://aathi9211_db_user:LU7rmgCvqGFTfzsB@aathi.vkybgvd.mongodb.net/book_store";
+const uri = `mongodb+srv://${process.env.userName}:${process.env.password}@aathi.vkybgvd.mongodb.net/book_store`;
 
 const dbConnection = (cb) => {
     MongoClient.connect(uri)
