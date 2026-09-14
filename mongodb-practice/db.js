@@ -2,10 +2,10 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 let db;
-const uri = `mongodb+srv://${process.env.userName}:${process.env.password}@aathi.vkybgvd.mongodb.net/book_store`;
+const url = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@aathi.vkybgvd.mongodb.net/book_store`;
 
 const dbConnection = (cb) => {
-    MongoClient.connect(uri)
+    MongoClient.connect(url)
         .then((client) => {
             db = client.db();
             cb();
