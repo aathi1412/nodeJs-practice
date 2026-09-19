@@ -7,10 +7,10 @@ const PORT = 3000;
 
 app.use(logger);
 
-const whiteList = ["http://localhost:63342", "http://localhost:5173"];
+const whiteList = ["http://localhost:3000", "http://localhost:5173"];
 const corsOptions = {
     origin: (origin, callback) => {
-        if (whiteList.indexOf(origin) !== -1){
+        if (whiteList.includes(origin) || !origin){
             callback(null, true);
         }else{
             callback(new Error("CORS not Allowed"))
@@ -21,19 +21,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.get('/', (req, res) => {
-    res.send('hi');
-});
-
-app.get('/name', (req, res, next) => {
-    next();
-}, (req, res) => {
-    res.send('aathi');
-});
+app.use('/', require("./routes/users"));
 app.all('/*splat', (req, res) => {
     res.status(404).send("Not Found: 404");
 });
 
 
 app.use(errorHandler);
-app.listen(PORT, () => console.log(`Server Listening on PORT ${PORT}`, 'http://localhost:3000'));
+app.listen(PORT, () => console.log(`Server Listening on PORT ${PORT}`, `http://localhost:${PORT}`));
