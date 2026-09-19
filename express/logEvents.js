@@ -1,6 +1,6 @@
-const fs = require('node-core-modules/fs');
-const fsPromises = require('node-core-modules/fs').promises;
-const path = require('node-core-modules/path');
+const fs = require('fs');
+const fsPromises = require('fs').promises;
+const path = require('path');
 const {format} = require('date-fns');
 const {v4: uuid} = require('uuid');
 
