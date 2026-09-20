@@ -1,3 +1,7 @@
 .idea
 mongodb-practice/node_modules/*
 mongodb-practice/.env
+index.html
+sample.js
+express/index.html
+express/node_modules/
